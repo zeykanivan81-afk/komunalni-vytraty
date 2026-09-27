@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#10264a">
+  <meta name="description" content="Офлайн-калькулятор комунальних витрат для кількох квартир">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>Комунальні витрати</title>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="На головну"><span class="brand-mark">⌂</span><span>Дім<span class="brand-dot">.</span></span></a>
+    <button class="icon-button" id="settingsBtn" aria-label="Налаштування та резервна копія" title="Резервна копія">↗</button>
+  </header>
+  <main class="shell">
+    <section class="intro"><p class="eyebrow">ВАШ ДОМАШНІЙ ОБЛІК</p><h1>Комунальні<br><span>витрати</span></h1><p class="intro-copy">Показники, нарахування й тарифи — в одному місці, навіть без інтернету.</p></section>
+    <section class="apartment-row"><div><label for="apartmentSelect">КВАРТИРА</label><select id="apartmentSelect"></select></div><button class="add-apartment" id="addApartment"><span>＋</span> Додати</button></section>
+    <section class="period-card"><div><span class="section-label">РОЗРАХУНОК ЗА</span><div class="period-controls"><button id="prevMonth" aria-label="Попередній місяць">‹</button><strong id="periodLabel"></strong><button id="nextMonth" aria-label="Наступний місяць">›</button></div></div><div class="period-status"><span class="status-dot"></span>Чернетка</div></section>
+    <section class="summary-card"><div class="summary-top"><span>До сплати за місяць</span><span class="summary-icon">₴</span></div><strong id="grandTotal">0,00 <small>₴</small></strong><span class="summary-foot" id="serviceCount">За 0 послуг</span></section>
+    <section class="services-heading"><div><p class="eyebrow">РОЗРАХУНОК</p><h2>Послуги</h2></div><button class="text-button" id="addService">＋ Додати послугу</button></section>
+    <div id="serviceList" class="service-list"></div>
+    <section class="selection-card"><div class="selection-header"><div><p class="eyebrow">ШВИДКИЙ ПІДСУМОК</p><h2>Обрані послуги</h2></div><button class="text-button" id="selectAll">Обрати всі</button></div><p class="muted small">Позначте потрібні послуги — сума оновиться автоматично.</p><div id="selectionList" class="selection-list"></div><div class="selection-total"><span>Сума обраного</span><strong id="selectedTotal">0,00 ₴</strong></div></section>
+    <section class="history-section"><div class="services-heading"><div><p class="eyebrow">АРХІВ</p><h2>Історія нарахувань</h2></div><button class="text-button" id="saveMonth">Зберегти місяць</button></div><div id="historyList" class="history-list"></div></section>
+    <footer>Дані зберігаються лише на цьому пристрої.<br>Показники переносяться з попереднього місяця автоматично.</footer>
+  </main>
+  <nav class="bottom-nav"><a class="active" href="#" aria-label="Розрахунок"><span>⌂</span><small>Розрахунок</small></a><a href="#historyList" aria-label="Історія"><span>◷</span><small>Історія</small></a><button id="navAdd" aria-label="Додати послугу"><span>＋</span></button><a href="#settingsBtn" aria-label="Дані"><span>▤</span><small>Дані</small></a></nav>
+  <dialog id="modal"><form method="dialog"><div class="modal-head"><h2 id="modalTitle"></h2><button class="icon-button close" aria-label="Закрити">×</button></div><div id="modalContent"></div><div class="modal-actions" id="modalActions"></div></form></dialog>
+  <script src="app.js"></script>
+</body>
+</html>
