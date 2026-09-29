@@ -1,4 +1,4 @@
-const CACHE = 'dim-utilities-cache-v2';
+const CACHE = 'dim-utilities-cache-v3';
 const FILES = ['./', './index.html', './styles.css', './app.js', './manifest.webmanifest', './icon.svg'];
 
 self.addEventListener('install', event => {
